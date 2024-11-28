@@ -1,0 +1,2 @@
+# This is a minimal config file for running migrations against a hosted Supabase instance
+project_id = "aeris"
