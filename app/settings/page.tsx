@@ -1,8 +1,8 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { PasswordInput } from "@/components/password-input";
 import { getApiKeys, saveApiKeys } from "@/app/actions/settings";
 
 export default async function Settings() {
@@ -39,12 +39,11 @@ export default async function Settings() {
                         <Label htmlFor="openrouter_api_key">
                             OpenRouter API Key
                         </Label>
-                        <Input
+                        <PasswordInput
                             id="openrouter_api_key"
                             name="openrouter_api_key"
-                            type="password"
                             placeholder="sk-or-..."
-                            defaultValue={settings?.openrouter_api_key || ""}
+                            defaultValue={settings?.openrouter_api_key ?? ""}
                         />
                         <p className="text-sm text-muted-foreground">
                             Used for powering the agent LLM. Get your API key
@@ -64,12 +63,11 @@ export default async function Settings() {
                         <Label htmlFor="replicate_api_key">
                             Replicate API Key
                         </Label>
-                        <Input
+                        <PasswordInput
                             id="replicate_api_key"
                             name="replicate_api_key"
-                            type="password"
                             placeholder="r8_..."
-                            defaultValue={settings?.replicate_api_key || ""}
+                            defaultValue={settings?.replicate_api_key ?? ""}
                         />
                         <p className="text-sm text-muted-foreground">
                             Used for image generation. Get your API key from{" "}
