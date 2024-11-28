@@ -59,7 +59,7 @@ export default function RootLayout({
                         </div>
                     </main>
                     <HelpButton />
-                    <Toaster richColors />
+                    <Toaster />
                 </ThemeProvider>
             </body>
         </html>
