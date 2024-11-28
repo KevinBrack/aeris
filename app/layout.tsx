@@ -1,7 +1,6 @@
 import { EnvVarWarning } from "@/components/env-var-warning";
 import { HelpButton } from "@/components/help-button";
 import HeaderAuth from "@/components/header-auth";
-import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "next-themes";
@@ -47,10 +46,7 @@ export default function RootLayout({
                                         Aeris
                                     </Link>
                                     {hasEnvVars ? (
-                                        <div className="flex items-center gap-4">
-                                            <ThemeSwitcher />
-                                            <HeaderAuth />
-                                        </div>
+                                        <HeaderAuth />
                                     ) : (
                                         <EnvVarWarning />
                                     )}
