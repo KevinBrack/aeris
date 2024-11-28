@@ -8,6 +8,7 @@
 - Added proper padding below navbar
 - Added bottom padding for content scrolling
 - Implemented global toast notifications using Sonner
+- Maintained theme consistency by removing richColors
 
 ### Settings Page
 
@@ -16,6 +17,7 @@
 - Implemented secure password input component with visibility toggle
 - Added proper form validation and error handling
 - Added success/error notifications for form submissions
+- Added Suspense boundary for client-side navigation
 
 ### API Key Management
 
@@ -32,6 +34,7 @@
 - Proper separation of server and client components
 - Added TypeScript types for better type safety
 - Followed Next.js best practices for file organization
+- Fixed build issues by properly handling client/server boundaries
 
 ## Migration Details
 
@@ -85,6 +88,7 @@ create trigger handle_updated_at
     - Verify content width and alignment
     - Check padding and spacing
     - Test scrolling behavior
+    - Verify toast notifications match theme
 
 2. Settings functionality:
 
@@ -92,15 +96,37 @@ create trigger handle_updated_at
     - Verify form submission
     - Check API key visibility toggle
     - Verify toast notifications
+    - Test client-side navigation with Suspense
 
 3. Database:
     - Test RLS policies
     - Verify API key storage
     - Check user isolation
 
+## Build and Development
+
+1. Clean and build:
+
+    ```bash
+    rm -rf .next
+    pnpm build
+    ```
+
+2. Run development server:
+
+    ```bash
+    pnpm dev
+    ```
+
+3. Run migrations:
+    ```bash
+    pnpm db:migration:push
+    ```
+
 ## Notes
 
-- Run migrations: `pnpm db:migration:push`
 - Get API keys from:
     - OpenRouter: https://openrouter.ai/keys
     - Replicate: https://replicate.com/account/api-tokens
+- Toast notifications maintain theme consistency
+- Client components properly wrapped in Suspense boundaries

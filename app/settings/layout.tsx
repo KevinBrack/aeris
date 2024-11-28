@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
 const sections = [
@@ -10,11 +10,7 @@ const sections = [
     { name: "API Keys", id: "api-keys" },
 ];
 
-export default function SettingsLayout({
-    children,
-}: {
-    children: React.ReactNode;
-}) {
+function SettingsNav() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [activeSection, setActiveSection] = useState("account");
@@ -37,25 +33,37 @@ export default function SettingsLayout({
     };
 
     return (
-        <div className="flex gap-12 px-4">
-            <nav className="w-48 flex-shrink-0">
-                <ul className="flex flex-col gap-2 sticky top-4">
-                    {sections.map((section) => (
-                        <li key={section.id}>
-                            <Button
-                                variant="ghost"
-                                className={cn(
-                                    "w-full justify-start",
-                                    activeSection === section.id && "bg-muted"
-                                )}
-                                onClick={() => handleSectionChange(section.id)}
-                            >
-                                {section.name}
-                            </Button>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+        <nav className="w-48 flex-shrink-0">
+            <ul className="flex flex-col gap-2 sticky top-4">
+                {sections.map((section) => (
+                    <li key={section.id}>
+                        <Button
+                            variant="ghost"
+                            className={cn(
+                                "w-full justify-start",
+                                activeSection === section.id && "bg-muted"
+                            )}
+                            onClick={() => handleSectionChange(section.id)}
+                        >
+                            {section.name}
+                        </Button>
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+}
+
+export default function SettingsLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    return (
+        <div className="flex gap-12 w-full max-w-7xl mx-auto px-4">
+            <Suspense fallback={<div>Loading...</div>}>
+                <SettingsNav />
+            </Suspense>
             <div className="flex-1 min-w-0">{children}</div>
         </div>
     );
