@@ -4,6 +4,7 @@ import HeaderAuth from "@/components/header-auth";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import { GeistSans } from "geist/font/sans";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "sonner";
 import Link from "next/link";
 import "./globals.css";
 
@@ -58,6 +59,7 @@ export default function RootLayout({
                         </div>
                     </main>
                     <HelpButton />
+                    <Toaster richColors />
                 </ThemeProvider>
             </body>
         </html>
