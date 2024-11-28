@@ -1,4 +1,5 @@
 import { EnvVarWarning } from "@/components/env-var-warning";
+import { HelpButton } from "@/components/help-button";
 import HeaderAuth from "@/components/header-auth";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { hasEnvVars } from "@/utils/supabase/check-env-vars";
@@ -58,11 +59,9 @@ export default function RootLayout({
                             <div className="flex flex-col gap-20 max-w-5xl p-5">
                                 {children}
                             </div>
-                            <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
-                                <p>Copyright 2024 Kevin Brack</p>
-                            </footer>
                         </div>
                     </main>
+                    <HelpButton />
                 </ThemeProvider>
             </body>
         </html>
