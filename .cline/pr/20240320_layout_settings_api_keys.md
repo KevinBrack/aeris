@@ -85,48 +85,48 @@ create trigger handle_updated_at
 
 1. Layout changes:
 
-    - Verify content width and alignment
-    - Check padding and spacing
-    - Test scrolling behavior
-    - Verify toast notifications match theme
+   - Verify content width and alignment
+   - Check padding and spacing
+   - Test scrolling behavior
+   - Verify toast notifications match theme
 
 2. Settings functionality:
 
-    - Test tab navigation
-    - Verify form submission
-    - Check API key visibility toggle
-    - Verify toast notifications
-    - Test client-side navigation with Suspense
+   - Test tab navigation
+   - Verify form submission
+   - Check API key visibility toggle
+   - Verify toast notifications
+   - Test client-side navigation with Suspense
 
 3. Database:
-    - Test RLS policies
-    - Verify API key storage
-    - Check user isolation
+   - Test RLS policies
+   - Verify API key storage
+   - Check user isolation
 
 ## Build and Development
 
 1. Clean and build:
 
-    ```bash
-    rm -rf .next
-    pnpm build
-    ```
+   ```bash
+   rm -rf .next
+   pnpm build
+   ```
 
 2. Run development server:
 
-    ```bash
-    pnpm dev
-    ```
+   ```bash
+   pnpm dev
+   ```
 
 3. Run migrations:
-    ```bash
-    pnpm db:migration:push
-    ```
+   ```bash
+   pnpm db:migration:push
+   ```
 
 ## Notes
 
 - Get API keys from:
-    - OpenRouter: https://openrouter.ai/keys
-    - Replicate: https://replicate.com/account/api-tokens
+  - OpenRouter: https://openrouter.ai/keys
+  - Replicate: https://replicate.com/account/api-tokens
 - Toast notifications maintain theme consistency
 - Client components properly wrapped in Suspense boundaries
