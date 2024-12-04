@@ -4,7 +4,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "db:migration:push": "supabase db push"
+        "db:migration:push": "supabase db push",
+        "lint": "next lint"
     },
     "dependencies": {
         "@radix-ui/react-avatar": "^1.1.1",
@@ -31,6 +32,8 @@
         "@types/node": "22.9.0",
         "@types/react": "^18.3.12",
         "@types/react-dom": "18.3.1",
+        "eslint": "^9",
+        "eslint-config-next": "15.0.3",
         "postcss": "8.4.49",
         "supabase": "^1.145.4",
         "tailwind-merge": "^2.5.2",
