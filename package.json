@@ -7,7 +7,8 @@
     "db:migration:push": "supabase db push",
     "lint": "next lint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.1",
@@ -36,6 +37,7 @@
     "@types/react-dom": "18.3.1",
     "eslint": "^9",
     "eslint-config-next": "15.0.3",
+    "husky": "^9.1.7",
     "postcss": "8.4.49",
     "supabase": "^1.145.4",
     "tailwind-merge": "^2.5.2",
