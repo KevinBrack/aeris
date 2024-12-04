@@ -33,23 +33,23 @@ function SettingsNav() {
     };
 
     return (
-        <nav className="w-48 flex-shrink-0">
-            <ul className="flex flex-col gap-2 sticky top-4">
+        <nav className="w-full border-b mb-6">
+            <div className="flex space-x-4">
                 {sections.map((section) => (
-                    <li key={section.id}>
-                        <Button
-                            variant="ghost"
-                            className={cn(
-                                "w-full justify-start",
-                                activeSection === section.id && "bg-muted"
-                            )}
-                            onClick={() => handleSectionChange(section.id)}
-                        >
-                            {section.name}
-                        </Button>
-                    </li>
+                    <button
+                        key={section.id}
+                        onClick={() => handleSectionChange(section.id)}
+                        className={cn(
+                            "pb-2 text-sm font-medium relative",
+                            activeSection === section.id
+                                ? "text-foreground border-b-2 border-primary"
+                                : "text-muted-foreground"
+                        )}
+                    >
+                        {section.name}
+                    </button>
                 ))}
-            </ul>
+            </div>
         </nav>
     );
 }
@@ -60,11 +60,11 @@ export default function SettingsLayout({
     children: React.ReactNode;
 }) {
     return (
-        <div className="flex gap-12 w-full max-w-7xl mx-auto px-4">
+        <div className="w-full max-w-7xl mx-auto px-4">
             <Suspense fallback={<div>Loading...</div>}>
                 <SettingsNav />
             </Suspense>
-            <div className="flex-1 min-w-0">{children}</div>
+            <div className="w-full">{children}</div>
         </div>
     );
 }
