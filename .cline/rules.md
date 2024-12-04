@@ -11,3 +11,5 @@ IMPORTANT! When editing a file change only what you intend to and copy the rest 
 Use pnpm instead of npm
 
 We are using shadcn sonner for toasts. It is provided in the root layout.
+
+NextJS imports are '@/' with version 15. Do NOT change import syntax when making code changes!
