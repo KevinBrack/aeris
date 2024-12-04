@@ -69,6 +69,7 @@ export async function saveApiKeys(formData: FormData): Promise<SettingsActionRes
       };
     }
   } catch (error) {
+    console.error(error);
     return {
       success: false,
       message: 'Failed to save API keys. Please try again.',

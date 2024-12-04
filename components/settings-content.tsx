@@ -29,6 +29,7 @@ export function SettingsContent({ user, settings }: SettingsContentProps) {
         });
       }
     } catch (error) {
+      console.error(error);
       toast.error('Error', {
         description: 'An unexpected error occurred',
       });
